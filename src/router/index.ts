@@ -1,22 +1,29 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
-// header的路由
-import Home from '../views/Home.vue'
-import Blog from '../views/blog.vue'
-import Life from '../views/life.vue'
-import Photography from '../views/photography.vue'
-import Login from '../views/login.vue'
+// 布局
+import Index from 'views/index.vue'
 
-// 技术博客
+// 主页
+import Home from 'views/home/home.vue'
+
+// 开源
+import Open from 'views/open/index.vue'
+
+// 博客
+import Blog from 'views/blog/blog.vue'
 import stemNormsSummarize from '../markdown/teamNorms/summarize.vue'
 import stemNormsCss from '../markdown/teamNorms/css.vue'
 import stemNormsJs from '../markdown/teamNorms/js.vue'
 
-// 暂时放弃MarkDown的批量引入
-// import Markdown from "../markdown/Markdown.vue";
-// import Instr from '../markdown/instro/instro.md'
+// 生活
+import Life from 'views/life/life.vue'
 
-// const md = (string: any) => Vue.h(Markdown, { content: string, key: string });
+// 摄影
+import Photography from 'views/photography/photography.vue'
+
+// 登录
+import Login from 'views/login/login.vue'
+
 
 
 Vue.use(VueRouter)
@@ -27,55 +34,68 @@ const routes: Array<RouteConfig> = [
     redirect:'/home' 
   },
   {
-    path: '/home',
-    name: 'Home',
-    component: Home,
-  },      
-  {
-    path: '/blog',
-    component:Blog ,
+    path: '/index',
+    component: Index,
     children:[
       {
-        path:'',
-        redirect:'stemNorms/summarize' 
-      },
-      // 代码规范
-      {
-        path:'stemNorms/summarize',
-        component: stemNormsSummarize
+        path: '/home',
+        name: 'home',
+        component: Home
       },
       {
-        path:'stemNorms/css',
-        component: stemNormsCss
+        path: '/open',
+        name: 'open',
+        component: Open
       },
       {
-        path:'stemNorms/js',
-        component: stemNormsJs
-      }
-      // 项目踩坑
-      // JS
-      // Vue
-      // React
-      // Node
-      // 工具
-      // 读书
+        path: '/blog',
+        component:Blog ,
+        children:[
+          {
+            path:'',
+            redirect:'stemNorms/summarize' 
+          },
+          // 代码规范
+          {
+            path:'stemNorms/summarize',
+            component: stemNormsSummarize
+          },
+          {
+            path:'stemNorms/css',
+            component: stemNormsCss
+          },
+          {
+            path:'stemNorms/js',
+            component: stemNormsJs
+          }
+          // 项目踩坑
+          // JS
+          // Vue
+          // React
+          // Node
+          // 工具
+          // 读书
+        ]
+      },
+      {
+        path: '/life',
+        name: 'life',
+        component: Life
+      },
+      {
+        path: '/photography',
+        name: 'Photography',
+        component: Photography
+      },
+      {
+        path: '/login',
+        name: 'Login',
+        component: Login,
+      },      
     ]
-  },
-  {
-    path: '/life',
-    name: 'life',
-    component: Life
-  },
-  {
-    path: '/photography',
-    name: 'Photography',
-    component: Photography
-  },
-  {
-    path: '/login',
-    name: 'Login',
-    component: Login,
-  },
+
+  },      
+
 
 ]
 

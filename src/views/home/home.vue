@@ -1,22 +1,18 @@
 <template>
-  <Layout>
-    <div class="bg">
-      <div class="drag">
-        <div class="text">
-          <p>Hello, I am BanGui</p>
-          <p>认真做好每一份细节，用心写好每一段代码</p>
-        </div>
+  <div class="bg">
+    <div class="drag">
+      <div class="text">
+        <p>Hello, I am BanGui</p>
+        <p>认真做好每一份细节，用心写好每一段代码</p>
       </div>
     </div>
-  </Layout>
+  </div>
 </template>
 
 <script lang="js">
-import Layout from '@/components/Layout.vue'
 export default {
   name: "",
   components: {
-    Layout
   },
 };
 </script>
@@ -27,7 +23,7 @@ export default {
   width: 100%;
   height: 100%;
   position: relative;
-  background: url("../assets/cat.jpg") center no-repeat fixed;
+  background: url("~assets/images/cat.jpg") center no-repeat fixed;
   background-size: 100% 100%;
   padding: 1px;
   box-sizing: border-box;

@@ -1,9 +1,9 @@
 <template>
   <div class="header-wrapper">
     <header>
-      <a class="image-wrapper" href="">BanGui</a>
+      <router-link to="/home" class="image-wrapper">BanGui</router-link>
       <div class="menu-wrapper">
-        <router-link to="/blog" active-class="selected"><span>开</span><span>源</span></router-link>
+        <router-link to="/open" active-class="selected"><span>开</span><span>源</span></router-link>
         <router-link to="/blog" active-class="selected"><span>博</span><span>客</span></router-link>
         <router-link to="/life" active-class="selected"><span>生</span><span>活</span></router-link>
         <router-link to="/photography" active-class="selected"><span>摄</span><span>影</span></router-link>
@@ -38,31 +38,39 @@ export default {
       font-size: 30px;
       font-weight: 600;
       color: white;
+      transition: all 0.5s ease-in-out;
+
+    }
+    .image-wrapper:hover {
+      color: #FF981A;
+      font-size: 34px;
+      transition: all 0.5s ease-in;
     }
     .menu-wrapper {
       a {
         display: inline-block;
         width: 100px;
-        padding: 20px 0;
+        padding: 19px 0;
         color: white;
         font-weight: 600;
+        border-bottom: 2px transparent solid;
         span:nth-child(1){
           margin-right: 2px;
           transition: all 0.5s ease-in-out;
         }
       }
       a:hover {
-        border-bottom: 2px orange solid;
+        border-bottom: 2px #FF981A solid;
         span:nth-child(1) {
-          color: red;
+          color: #FF981A;
           margin-right: 20px;
           transition: all 0.5s ease-in-out;
         }
       }
       .selected {
-        border-bottom: 2px orange solid;
+        border-bottom: 2px #FF981A solid;
         span:nth-child(1) {
-          color: red;
+          color: #FF981A;
           margin-right: 20px;
           transition: all 0.5s ease-in-out;
         }

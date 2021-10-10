@@ -1,12 +1,13 @@
 <template>
-<Layout>
   <div class="blog">
     <aside class="blog-aside">
       <el-collapse v-model="activeName" accordion>
         <el-collapse-item title="代码规范" name="1">
           <ol>
             <li>
-              <router-link to="/blog/stemNorms/summarize">代码规范总结</router-link>
+              <router-link to="/blog/stemNorms/summarize"
+                >代码规范总结</router-link
+              >
             </li>
             <li>
               <router-link to="/blog/stemNorms/css">css总结</router-link>
@@ -57,22 +58,17 @@
       <router-view />
     </main>
   </div>
-</Layout>
 </template>
 
 <script>
-import Layout from '@/components/Layout.vue'
-
 export default {
   name: "",
-  components: {
-    Layout
-  },
+  components: {},
   data() {
     return {
-      activeName: '1'
-    }
-  }
+      activeName: "1",
+    };
+  },
 };
 </script>
 

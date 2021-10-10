@@ -1,5 +1,4 @@
 <template>
-<Layout>
   <div class="home-life">
     <div
       class="panel active"
@@ -42,17 +41,15 @@
       <h3>Mountains - Clouds</h3>
     </div>
   </div>
-</Layout>
 </template>
 
 <script lang="js">
-import { showStory } from "../utils/showStory.js";
-import Layout from '@/components/Layout.vue'
+import { showStory } from "../../utils/showStory.js";
 
 export default {
   name: "Life",
   components: {
-    Layout
+    
   },
   mounted() {
     showStory();
