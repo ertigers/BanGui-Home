@@ -5,7 +5,7 @@
       <h1>NaNa-UI</h1>
       <h2>一个轻量高效的UI框架</h2>
       <p class="actions">
-        <a href="https://github.com/ertigers/wheel-ui-vue3">Github</a>
+        <a href="https://github.com/ertigers/BanGui-Home/tree/main/NaNa-UI-vue3">Github</a>
         <router-link to="/doc">Start</router-link>
       </p>
     </div>
